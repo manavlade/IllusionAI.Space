@@ -11,6 +11,8 @@ import {
     MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
+import ContactPage from "./ContactUs";
+import Footer from "./Footer";
 
 export function NavPage() {
     const navItems = [
@@ -97,7 +99,9 @@ export function NavPage() {
                     </MobileNavMenu>
                 </MobileNav>
             </Navbar>
-            <DummyContent />
+
+            <ContactPage />
+            <Footer />
 
             {/* Navbar */}
         </div>
