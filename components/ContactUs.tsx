@@ -8,12 +8,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-black relative text-white">
+    <main className=" bg-black relative text-white">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-green-800/30 via-black to-green-900/30 pointer-events-none" />
 
       {/* Wrapper */}
-      <div className="relative max-w-6xl mx-auto px-6 py-20">
+      <div className="relative max-w-6xl mx-auto ">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="uppercase text-sm tracking-wide text-green-400">Contact Us</p>

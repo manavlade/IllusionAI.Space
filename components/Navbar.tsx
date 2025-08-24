@@ -53,7 +53,7 @@ export function NavPage() {
                     <NavbarLogo />
                     <NavItems items={navItems} />
                     <div className="flex items-center gap-4">
-                        <NavbarButton variant="secondary">Login</NavbarButton>
+                        <NavbarButton variant="dark">Login</NavbarButton>
                     </div>
                 </NavBody>
 
@@ -76,7 +76,7 @@ export function NavPage() {
                                 key={`mobile-link-${idx}`}
                                 href={item.link}
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="relative text-neutral-600 dark:text-neutral-300"
+                                className="relative text-white"
                             >
                                 <span className="block">{item.name}</span>
                             </a>
@@ -84,17 +84,10 @@ export function NavPage() {
                         <div className="flex w-full flex-col gap-4">
                             <NavbarButton
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                variant="primary"
+                                variant="dark"
                                 className="w-full"
                             >
                                 Login
-                            </NavbarButton>
-                            <NavbarButton
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                variant="primary"
-                                className="w-full"
-                            >
-                                Book a call
                             </NavbarButton>
                         </div>
                     </MobileNavMenu>
@@ -113,7 +106,7 @@ const BackgroudBeam = () => {
     return (
         <>
             <WavyBackground>
-                <div className="max-w-6xl mx-auto p-4">
+                <div className="max-w-6xl mx-auto">
                     <h1 className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
                         <span>
                             Illusion AI
