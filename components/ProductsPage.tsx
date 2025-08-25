@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge, SparklesIcon } from "lucide-react";
+import { SparklesIcon } from "lucide-react";
 import { SkiperCard } from "./ui/skiper-card";
 import { cn } from "@/lib/utils";
 import step1light1Img from "@/public/step1light1.jpg";
@@ -11,6 +11,8 @@ import step3lightImg from "@/public/step3light.jpg";
 import step4lightImg from "@/public/step4light.jpg";
 import { BackgroundBeams } from "./ui/background-beams";
 import { motion } from "framer-motion";
+import { Badge } from "./ui/badge";
+import { StaticImageData } from "next/image";
 
 // Animation variants
 const fadeInUp = {
@@ -26,6 +28,22 @@ const staggerChildren = {
   }
 };
 
+interface CardImageProps {
+  step1dark1?: StaticImageData;
+  step1dark2?: StaticImageData;
+  step1light1: StaticImageData;
+  step1light2: StaticImageData;
+  step2dark1?: StaticImageData;
+  step2dark2?: StaticImageData;
+  step2light1: StaticImageData;
+  step2light2: StaticImageData;
+  step3dark?: StaticImageData;
+  step3light: StaticImageData;
+  step4light: StaticImageData;
+  alt: string;
+}
+
+
 export const ProductsPage = () => {
   return (
     <>
@@ -34,10 +52,10 @@ export const ProductsPage = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black via-neutral-950 to-neutral-900">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
         </div>
-        
+
         <div className="relative z-10 p-2">
           <div className="mb-8 mx-auto pt-4 md:container">
-            <motion.div 
+            <motion.div
               className="mx-auto"
               initial="hidden"
               whileInView="visible"
@@ -45,7 +63,7 @@ export const ProductsPage = () => {
               variants={staggerChildren}
             >
               {/* Enhanced Badge with glow effect */}
-              <motion.div 
+              <motion.div
                 className="flex w-full items-center justify-center"
                 variants={fadeInUp}
               >
@@ -54,18 +72,18 @@ export const ProductsPage = () => {
                   className="mb-12 rounded-full border border-white/20 bg-black/30 px-6 py-3 text-base backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:bg-black/50 group"
                 >
                   <SparklesIcon className="mr-2 fill-[#EEBDE0] stroke-1 text-neutral-200 transition-transform duration-300 group-hover:rotate-12" />
-                  <span className="text-white bg-gradient-to-r from-white to-neutral-300 bg-clip-text text-transparent">
+                  <span className=" bg-gradient-to-r from-white to-neutral-300 bg-clip-text text-transparent">
                     Our Products
                   </span>
                 </Badge>
               </motion.div>
 
               {/* Animated Title */}
-              <motion.div 
+              <motion.div
                 className="text-center mb-12"
                 variants={fadeInUp}
               >
-                <motion.h2 
+                <motion.h2
                   className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +103,7 @@ export const ProductsPage = () => {
                     Proud Of
                   </motion.span>
                 </motion.h2>
-                
+
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: "100px" }}
@@ -93,8 +111,8 @@ export const ProductsPage = () => {
                   viewport={{ once: true }}
                   className="h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6 rounded-full"
                 />
-                
-                <motion.p 
+
+                <motion.p
                   className="text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -106,7 +124,7 @@ export const ProductsPage = () => {
               </motion.div>
 
               {/* Enhanced Skiper Card Container */}
-              <motion.div 
+              <motion.div
                 className="mx-auto max-w-5xl rounded-3xl bg-gradient-to-br from-neutral-900 via-black to-neutral-900 p-px shadow-2xl shadow-purple-500/10"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -114,7 +132,7 @@ export const ProductsPage = () => {
                 viewport={{ once: true }}
               >
                 <div className="relative z-10 w-full overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-950 to-white p-3">
-                  <SkiperCard
+                  {/* <SkiperCard 
                     step1img1Class={cn(
                       "pointer-events-none w-[50%] border border-white/10 transition-all duration-500 shadow-lg",
                       "left-1/4 top-[57%] rounded-2xl max-md:scale-[160%] md:left-[35px] md:top-[29%]",
@@ -154,20 +172,21 @@ export const ProductsPage = () => {
                       step4light: step4lightImg,
                       alt: "AI Feature Image",
                     }}
+
                     title=""
-                  />
+                  /> */}
                 </div>
               </motion.div>
-              
+
               {/* Enhanced call to action */}
-              <motion.div 
+              <motion.div
                 className="mt-16 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <motion.p 
+                <motion.p
                   className="text-sm text-neutral-400 mb-4"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -176,7 +195,7 @@ export const ProductsPage = () => {
                 >
                   Explore our full product lineup
                 </motion.p>
-                <motion.div 
+                <motion.div
                   className="flex justify-center"
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -185,8 +204,8 @@ export const ProductsPage = () => {
                 >
                   <div className="h-px w-32 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   className="mt-8"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -201,10 +220,10 @@ export const ProductsPage = () => {
             </motion.div>
           </div>
         </div>
-        
+
         {/* Subtle background beams for depth */}
         <BackgroundBeams />
-        
+
         {/* Floating decorative elements */}
         <motion.div
           animate={{
@@ -229,7 +248,7 @@ export const ProductsPage = () => {
           }}
           className="absolute bottom-1/3 right-12 w-3 h-3 rounded-full bg-blue-500 opacity-20"
         />
-      </section>   
+      </section>
     </>
   );
 };

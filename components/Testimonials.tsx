@@ -1,5 +1,5 @@
-import { AnimatedTestimonials } from "./ui/animated-testimonials";
 import { motion } from "framer-motion";
+import { AnimatedTestimonials } from "./ui/animated-testimonials";
 
 export function AnimatedTestimonialsDemo() {
   const testimonials = [
