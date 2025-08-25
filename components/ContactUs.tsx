@@ -1,5 +1,5 @@
 "use client";
-
+import {motion} from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,14 +15,90 @@ export default function ContactPage() {
       {/* Wrapper */}
       <div className="relative max-w-6xl mx-auto ">
         {/* Header */}
-        <div className="text-center mb-16">
-          <p className="uppercase text-sm tracking-wide text-green-400">Contact Us</p>
-          <h1 className="text-4xl font-bold">Get in Touch with Us</h1>
-          <p className="mt-3 text-neutral-400 max-w-2xl mx-auto">
-            We’re here to help. Whether you’re interested in learning more about our services 
-            or need support, we’re happy to assist you.
-          </p>
-        </div>
+       <div className="text-center mb-16 relative overflow-hidden">
+  {/* Animated background elements */}
+  <div className="absolute -top-20 left-1/4 w-72 h-72 bg-purple-600 rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
+  <div className="absolute -bottom-20 right-1/4 w-64 h-64 bg-blue-600 rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
+  
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+    className="relative"
+  >
+    <motion.p 
+      className="uppercase pt-6 text-sm tracking-widest text-green-400 font-semibold mb-4"
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      viewport={{ once: true }}
+    >
+      <motion.span
+        animate={{ 
+          textShadow: ["0 0 5px rgba(74, 222, 128, 0.5)", "0 0 15px rgba(74, 222, 128, 0.8)", "0 0 5px rgba(74, 222, 128, 0.5)"]
+        }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        Contact Us
+      </motion.span>
+    </motion.p>
+    
+    <motion.h1 
+      className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 mb-6"
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+      viewport={{ once: true }}
+    >
+      Get in Touch with Us
+    </motion.h1>
+    
+    <motion.div
+      initial={{ width: 0 }}
+      whileInView={{ width: "100px" }}
+      transition={{ duration: 0.8, delay: 0.5 }}
+      viewport={{ once: true }}
+      className="h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6 rounded-full"
+    />
+    
+    <motion.p 
+      className="mt-3 text-neutral-300 max-w-2xl mx-auto text-lg leading-relaxed"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.7, delay: 0.6 }}
+      viewport={{ once: true }}
+    >
+      We're here to help. Whether you're interested in learning more about our services 
+      or need support, we're happy to assist you.
+    </motion.p>
+    
+    {/* Floating elements */}
+    <motion.div
+      animate={{
+        y: [0, -10, 0],
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+      className="absolute -top-2 -left-4 w-3 h-3 rounded-full bg-green-400 opacity-60"
+    />
+    <motion.div
+      animate={{
+        y: [0, 10, 0],
+      }}
+      transition={{
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 1
+      }}
+      className="absolute -bottom-2 -right-4 w-4 h-4 rounded-full bg-purple-400 opacity-60"
+    />
+  </motion.div>
+</div>
 
         {/* Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-neutral-900/70 rounded-2xl p-10 shadow-xl">
