@@ -49,9 +49,9 @@ export default function Footer() {
       </section>
 
       {/* Hero CTA */}
-      <section className="w-full flex justify-center px-6 -mt-10 z-10">
+      {/* <section className="w-full flex justify-center px-6 -mt-10 z-10">
         <div className="w-full max-w-6xl bg-gradient-to-br from-black via-neutral-900 to-black rounded-2xl text-white shadow-lg flex flex-col md:flex-row justify-between items-center px-10 py-16 relative overflow-hidden">
-          {/* Left */}
+      
           <div className="flex-1 flex flex-col gap-4">
             <h3 className="text-3xl md:text-4xl font-bold leading-tight">
               Experience superior <br /> skip tracing
@@ -62,7 +62,6 @@ export default function Footer() {
             </Button>
           </div>
 
-          {/* Right globe image */}
           <div className="flex-1 flex justify-end items-center mt-10 md:mt-0">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg"
@@ -71,20 +70,20 @@ export default function Footer() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="bg-black text-white mt-0 py-14 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
           {/* Company info */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-lg font-bold">skipmatrix</h3>
-            <p>20619 Torrence Chapel Rd</p>
-            <p>Suite 116 #1040</p>
-            <p>Cornelius, NC 28031</p>
-            <p>United States</p>
-            <p className="mt-2">Phone number: <span className="font-medium">1-800-201-1019</span></p>
-            <p>Email: <span className="font-medium">support@skipmatrix.com</span></p>
+            <h3 className="text-lg font-bold">IllusionAI</h3>
+            <p>Mumbai, </p>
+            <p>Maharashtra,</p>
+            <p>400001</p>
+            <p>India (bharat)</p>
+            {/* <p className="mt-2">Phone number: <span className="font-medium">1-800-201-1019</span></p> */}
+            <p>Email: <span className="font-medium">support@IllusionAi.space</span></p>
           </div>
 
           {/* Quick links */}
@@ -116,9 +115,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto mt-10 text-neutral-500 text-xs">
+        {/* <div className="max-w-6xl mx-auto mt-10 text-neutral-500 text-xs">
           © 2024 Skipmatrix. All rights reserved.
-        </div>
+        </div> */}
       </footer>
     </main>
   );

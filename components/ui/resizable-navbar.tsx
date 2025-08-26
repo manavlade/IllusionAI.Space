@@ -11,6 +11,11 @@ import {
 import React, { useRef, useState } from "react";
 
 
+import logo from "@/assets/illusion ai.jpg";
+import logo1 from "@/assets/illusion_ai-removebg-preview.png";
+
+import Image from "next/image";
+
 interface NavbarProps {
   children: React.ReactNode;
   className?: string;
@@ -236,13 +241,12 @@ export const NavbarLogo = () => {
       href="#"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <img
-        src="https://assets.aceternity.com/logo-dark.png"
+      <Image
+        src={logo}
         alt="logo"
-        width={30}
-        height={30}
+        width={100}
+        height={100}
       />
-      <span className="font-medium text-black dark:text-white">Startup</span>
     </a>
   );
 };

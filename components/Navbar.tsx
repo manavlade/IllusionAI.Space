@@ -88,7 +88,7 @@ export function NavPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <NavbarButton variant="dark">Login</NavbarButton>
+                <NavbarButton variant="dark">Get Started</NavbarButton>
               </motion.div>
             </div>
           </NavBody>
