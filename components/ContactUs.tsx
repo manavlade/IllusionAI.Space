@@ -1,185 +1,183 @@
 "use client";
-import {motion} from 'framer-motion';
-import { Button } from "@/components/ui/button";
+
+import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Clock, Mail, MapPin, Phone, Sparkles } from "lucide-react"; // Using Sparkles as logo placeholder
 
 export default function ContactPage() {
   return (
-    <main className=" bg-black relative text-white">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-green-800/30 via-black to-green-900/30 pointer-events-none" />
+    <main id="contact" className="relative bg-black text-white overflow-hidden">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-green-900/30 via-black to-purple-900/30 pointer-events-none" />
 
       {/* Wrapper */}
-      <div className="relative max-w-6xl mx-auto ">
-        {/* Header */}
-       <div className="text-center mb-16 relative overflow-hidden">
-  {/* Animated background elements */}
-  <div className="absolute -top-20 left-1/4 w-72 h-72 bg-purple-600 rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
-  <div className="absolute -bottom-20 right-1/4 w-64 h-64 bg-blue-600 rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
-  
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-    viewport={{ once: true }}
-    className="relative"
-  >
-    <motion.p 
-      className="uppercase pt-6 text-sm tracking-widest text-green-400 font-semibold mb-4"
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      viewport={{ once: true }}
-    >
-      <motion.span
-        animate={{ 
-          textShadow: ["0 0 5px rgba(74, 222, 128, 0.5)", "0 0 15px rgba(74, 222, 128, 0.8)", "0 0 5px rgba(74, 222, 128, 0.5)"]
-        }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        Contact Us
-      </motion.span>
-    </motion.p>
-    
-    <motion.h1 
-      className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 mb-6"
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.3 }}
-      viewport={{ once: true }}
-    >
-      Get in Touch with Us
-    </motion.h1>
-    
-    <motion.div
-      initial={{ width: 0 }}
-      whileInView={{ width: "100px" }}
-      transition={{ duration: 0.8, delay: 0.5 }}
-      viewport={{ once: true }}
-      className="h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6 rounded-full"
-    />
-    
-    <motion.p 
-      className="mt-3 text-neutral-300 max-w-2xl mx-auto text-lg leading-relaxed"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.7, delay: 0.6 }}
-      viewport={{ once: true }}
-    >
-      We're here to help. Whether you're interested in learning more about our services 
-      or need support, we're happy to assist you.
-    </motion.p>
-    
-    {/* Floating elements */}
-    <motion.div
-      animate={{
-        y: [0, -10, 0],
-      }}
-      transition={{
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-      className="absolute -top-2 -left-4 w-3 h-3 rounded-full bg-green-400 opacity-60"
-    />
-    <motion.div
-      animate={{
-        y: [0, 10, 0],
-      }}
-      transition={{
-        duration: 5,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: 1
-      }}
-      className="absolute -bottom-2 -right-4 w-4 h-4 rounded-full bg-purple-400 opacity-60"
-    />
-  </motion.div>
+      <div className="relative max-w-6xl mx-auto px-6 py-20">
+        {/* Header Section */}
+        <div className="text-center mb-20 relative">
+          {/* Glowing blobs */}
+          <div className="absolute -top-24 left-1/4 w-72 h-72 bg-purple-600 rounded-full blur-[120px] opacity-20 animate-pulse" />
+          <div className="absolute -bottom-28 right-1/4 w-72 h-72 bg-green-600 rounded-full blur-[120px] opacity-20 animate-pulse delay-1000" />
+
+          <motion.p
+            className="uppercase text-sm tracking-[0.2em] text-green-400 font-semibold mb-4 relative z-10"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <motion.span
+              animate={{
+                textShadow: [
+                  "0 0 5px rgba(74, 222, 128, 0.5)",
+                  "0 0 15px rgba(74, 222, 128, 0.8)",
+                  "0 0 5px rgba(74, 222, 128, 0.5)",
+                ],
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              Contact Us
+            </motion.span>
+          </motion.p>
+
+          <motion.h1
+            className="text-4xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400 mb-6 relative z-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Get in Touch with Us
+          </motion.h1>
+
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: "120px" }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="h-1 bg-gradient-to-r from-green-400 via-purple-400 to-blue-400 mx-auto mb-6 rounded-full"
+          />
+
+          <motion.p
+            className="mt-4 text-neutral-300 max-w-2xl mx-auto text-lg leading-relaxed relative z-10"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            We're here to help. Whether you're curious about our services or
+            need direct support, Illusion AI is ready to assist you.
+          </motion.p>
+        </div>
+
+        {/* Content Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-neutral-900/60 backdrop-blur-xl rounded-2xl p-10 shadow-2xl border border-white/10 relative z-10">
+          {/* Left Column - Info */}
+          <motion.div
+            className="flex flex-col gap-6"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            {/* Logo + Tagline */}
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-r from-green-500 to-purple-500 flex items-center justify-center shadow-lg shadow-green-500/30">
+                <Sparkles className="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white">Illusion AI</h3>
+                <p className="text-neutral-400 text-sm">
+                  Deeptech that simplifies complexity
+                </p>
+              </div>
+            </div>
+
+          <div className="space-y-3 text-neutral-300 text-base leading-relaxed mt-4">
+  <p className="flex items-center gap-2">
+    <Phone className="w-5 h-5 text-green-400" />
+    <span className="text-white font-medium">9766675853</span>
+  </p>
+  <p className="flex items-center gap-2">
+    <Mail className="w-5 h-5 text-blue-400" />
+    <span className="text-white font-medium">infoillusionai@gmail.com</span>
+  </p>
+  <p className="flex items-center gap-2">
+    <MapPin className="w-5 h-5 text-red-400" />
+    <span className="text-white font-medium">Mumbai</span>
+  </p>
+  <p className="flex items-center gap-2">
+    <Clock className="w-5 h-5 text-yellow-400" />
+    <span className="text-white font-medium">Within 24 hours</span>
+  </p>
 </div>
 
-        {/* Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-neutral-900/70 rounded-2xl p-10 shadow-xl">
-          {/* Left column - Info */}
-          <div className="flex flex-col gap-6">
-            <ul className="space-y-4 text-neutral-300">
-              <li className="flex items-center gap-2">
-                <span className="text-green-400">✔</span> Reliable Delivery
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-green-400">✔</span> Comprehensive Token & Digest
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-green-400">✔</span> Customizable Notifications
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-green-400">✔</span> Real-Time Updates
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-green-400">✔</span> Seamless Integration
-              </li>
-            </ul>
+            <p className="text-lg text-neutral-300 mt-6">
+              Ready to start your{" "}
+              <span className="text-green-400 font-semibold">
+                AI transformation journey
+              </span>
+              ? Let's discuss how Illusion AI can help your business thrive.
+            </p>
+          </motion.div>
 
-            <div className="mt-8 text-neutral-400 text-sm leading-relaxed">
-              <h3 className="text-white font-semibold text-lg mb-2">General Contact Info</h3>
-              <p>
-                Phone: <span className="text-white">+1-415-555-0199</span>
-              </p>
-              <p>
-                Email: <span className="text-white">contact@innovatech.com</span>
-              </p>
-              <p>
-                Location: Future Tech Institute, 123 Innovation Way, Suite 200 <br />
-                San Francisco, CA 94107
-              </p>
-            </div>
-          </div>
+          {/* Right Column - Form */}
+          <motion.form
+            className="space-y-6"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <Input
+              type="text"
+              placeholder="Full Name"
+              className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500"
+            />
 
-          {/* Right column - Form */}
-          <form className="space-y-6">
-            {/* Name */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Input placeholder="First Name" className="bg-neutral-800 border-neutral-700" />
-              <Input placeholder="Last Name" className="bg-neutral-800 border-neutral-700" />
-            </div>
+            <Input
+              type="email"
+              placeholder="Email Address"
+              className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500"
+            />
 
-            {/* Email */}
-            <Input type="email" placeholder="Email Address" className="bg-neutral-800 border-neutral-700" />
+            <Input
+              placeholder="Subject"
+              className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500"
+            />
 
-            {/* Company */}
-            <Input placeholder="Company Name" className="bg-neutral-800 border-neutral-700" />
-
-            {/* Select */}
-            <Select>
-              <SelectTrigger className="bg-neutral-800 border-neutral-700">
-                <SelectValue placeholder="Which best describes you?" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="developer">Developer</SelectItem>
-                <SelectItem value="business">Business Owner</SelectItem>
-                <SelectItem value="enterprise">Enterprise</SelectItem>
-              </SelectContent>
-            </Select>
-
-            {/* Message */}
-            <Textarea placeholder="Write your message..." className="bg-neutral-800 border-neutral-700" />
+            <Textarea
+              placeholder="Write your message..."
+              className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500 min-h-[150px]"
+            />
 
             {/* Agreement */}
             <div className="flex items-start gap-2">
               <Checkbox id="agree" />
-              <label htmlFor="agree" className="text-sm text-neutral-400 leading-tight">
-                I agree to Fireside <span className="underline cursor-pointer">Terms of Use</span> 
-                and <span className="underline cursor-pointer">Privacy Policy</span>
+              <label
+                htmlFor="agree"
+                className="text-sm text-neutral-400 leading-tight"
+              >
+                I agree to Illusion AI's{" "}
+                <span className="underline cursor-pointer">
+                  Terms of Use
+                </span>{" "}
+                and{" "}
+                <span className="underline cursor-pointer">
+                  Privacy Policy
+                </span>
               </label>
             </div>
 
-            {/* Submit */}
-            <Button type="submit" className="bg-green-600 hover:bg-green-500 rounded-lg">
+            <Button
+              type="submit"
+              className="bg-gradient-to-r from-green-600 to-purple-600 hover:from-green-500 hover:to-purple-500 text-white font-semibold py-2 rounded-xl shadow-lg shadow-green-500/20 transition-transform duration-200 hover:scale-105"
+            >
               Submit
             </Button>
-          </form>
+          </motion.form>
         </div>
       </div>
     </main>

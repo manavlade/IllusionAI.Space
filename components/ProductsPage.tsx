@@ -26,10 +26,11 @@ const staggerChildren = {
   }
 };
 
+
 export const ProductsPage = () => {
   return (
     <>
-      <section className="relative w-full overflow-hidden py-20" id="features">
+      <section  className="relative w-full overflow-hidden py-20" id="features">
         {/* Enhanced background with gradient and subtle animation */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-neutral-950 to-neutral-900">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
