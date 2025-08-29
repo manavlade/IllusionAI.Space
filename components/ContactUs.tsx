@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ import { Clock, Mail, MapPin, Phone, Sparkles } from "lucide-react"; // Using Sp
 
 export default function ContactPage() {
   return (
+
     <main id="contact" className="relative bg-black text-white overflow-hidden">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/30 via-black to-purple-900/30 pointer-events-none" />
@@ -93,6 +95,7 @@ export default function ContactPage() {
                   Deeptech that simplifies complexity
                 </p>
               </div>
+
             </div>
 
           <div className="space-y-3 text-neutral-300 text-base leading-relaxed mt-4">
@@ -143,10 +146,12 @@ export default function ContactPage() {
               className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500"
             />
 
+
             <Input
               placeholder="Subject"
               className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500"
             />
+
 
             <Textarea
               placeholder="Write your message..."
@@ -156,6 +161,7 @@ export default function ContactPage() {
             {/* Agreement */}
             <div className="flex items-start gap-2">
               <Checkbox id="agree" />
+
               <label
                 htmlFor="agree"
                 className="text-sm text-neutral-400 leading-tight"
@@ -168,6 +174,7 @@ export default function ContactPage() {
                 <span className="underline cursor-pointer">
                   Privacy Policy
                 </span>
+
               </label>
             </div>
 
