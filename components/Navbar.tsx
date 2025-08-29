@@ -23,6 +23,7 @@ import TrustedBy from "./TrustedBy";
 import ValuesPage from "./ValuesPage";
 import GoalsPage from "./GoalsPage";
 import WelcomePage from "./WelcomePage";
+import Pricing from "./Priceing";
 
 export function NavPage() {
   const navItems = [
@@ -35,12 +36,12 @@ export function NavPage() {
       link: "#about",
     },
     {
-      name: "Services",
-      link: "#services",
-    },
-    {
       name: "Products",
       link: "#products",
+    },
+      {
+      name: "Services",
+      link: "#services",
     },
     // {
     //   name: "Features",
@@ -50,10 +51,10 @@ export function NavPage() {
       name: "Contact",
       link: "#contact",
     },
-    // {
-    //   name: "Pricing",
-    //   link: "#pricing",
-    // },
+    {
+      name: "Pricing",
+      link: "#pricing",
+    },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -97,9 +98,9 @@ export function NavPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <NavbarButton  
-          
-              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium shadow-lg">Get Started</NavbarButton>
+                <NavbarButton className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium shadow-lg">
+                  <a href="#contact">Get Started</a>
+                </NavbarButton>
               </motion.div>
             </div>
           </NavBody>
@@ -140,7 +141,7 @@ export function NavPage() {
                     variant="dark"
                     className="w-full"
                   >
-                    Get Started
+                    <a href="#contact">Get Started</a>
                   </NavbarButton>
                 </motion.div>
               </div>
@@ -158,6 +159,7 @@ export function NavPage() {
       <ServicesPage />
       <AboutUs />
       {/* <AnimatedTestimonialsDemo /> */}
+      {/* <Pricing/> */}
       <ContactPage />
       <Footer />
     </div>
@@ -214,7 +216,7 @@ const BackgroudBeam = () => {
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium shadow-lg"
             >
-              Get Started
+              <a href="#contact">Get Started</a>
             </motion.button>
             {/* <motion.button
               whileHover={{ scale: 1.05 }}

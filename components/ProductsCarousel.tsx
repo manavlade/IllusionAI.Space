@@ -22,8 +22,8 @@ const ProductsCarousel = () => {
       title: "Astro AI",
       subtitle: "AI-driven astrology & numerology engine",
       description:
-        "Unlock the mathematical patterns of the universe through AI that combines astrological wisdom with numerological analysis. Cosmic Num AI reveals how celestial movements and numerical frequencies influence personal and business outcomes.",
-      cta: "Explore Astro AI",
+        "Unlock the mathematical patterns of the universe through AI that combines astrological wisdom with numerological analysis. Astro AI reveals how celestial movements and numerical frequencies influence personal and business outcomes.",
+      cta: "Try Me",
       color: "from-blue-600 to-indigo-600",
       image: "/astro.jpg", // ✅ you already have astro.jpg
     },
@@ -32,7 +32,7 @@ const ProductsCarousel = () => {
       subtitle: "Intersection of neurology, psychology & philosophy",
       description:
         "Explore the depths of human consciousness through AI that understands the brain, mind, and soul. Mind Neuro AI provides insights into behavior patterns, cognitive optimization, and philosophical understanding of human experience.",
-      cta: "Explore Mind Neuro AI",
+      cta: "Try Me",
       color: "from-green-600 to-teal-600",
       image: "/mindneuro.jpg", // ✅ placeholder
     },
@@ -41,7 +41,7 @@ const ProductsCarousel = () => {
       subtitle: "Spiritual guidance interpretation",
       description:
         "DivineScript AI merges AI with the profound teachings of all major philosophies and sacred texts to provide guidance for daily life challenges.",
-      cta: "Explore Divine Script AI",
+      cta: "Try Me",
       color: "from-amber-600 to-orange-600",
       image: "/divine.jpg", // ✅ placeholder
     },
@@ -50,7 +50,7 @@ const ProductsCarousel = () => {
       subtitle: "Advanced astrophysics & quantum AI assistant",
       description:
         "Harness the fundamental forces of reality through AI that understands both cosmic scales and quantum realms. Cosmos AI applies universal principles to solve complex problems across any domain.",
-      cta: "Explore Cosmos AI",
+      cta: "Try Me",
       color: "from-indigo-600 to-purple-600",
       image: "/cosmos.jpg", // ✅ placeholder
     },

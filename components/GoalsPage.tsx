@@ -46,9 +46,61 @@ export default function GoalsPage() {
 
         {/* Chakra Layout */}
         <div className="relative flex items-center justify-center">
+          {/* SVG Neon Lines Layer */}
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Left side neon lines */}
+            <line
+              x1="50%"
+              y1="50%"
+              x2="15%"
+              y2="35%"
+              className="neon-line"
+            />
+            <line
+              x1="50%"
+              y1="50%"
+              x2="15%"
+              y2="50%"
+              className="neon-line"
+            />
+            <line
+              x1="50%"
+              y1="50%"
+              x2="15%"
+              y2="65%"
+              className="neon-line"
+            />
+
+            {/* Right side neon lines */}
+            <line
+              x1="50%"
+              y1="50%"
+              x2="85%"
+              y2="35%"
+              className="neon-line"
+            />
+            <line
+              x1="50%"
+              y1="50%"
+              x2="85%"
+              y2="50%"
+              className="neon-line"
+            />
+            <line
+              x1="50%"
+              y1="50%"
+              x2="85%"
+              y2="65%"
+              className="neon-line"
+            />
+          </svg>
+
           {/* Central Chakra Circle */}
           <motion.div
-            className="relative w-56 h-56 rounded-full bg-gradient-to-r from-green-500/30 to-purple-500/30 flex items-center justify-center border border-white/10 shadow-[0_0_40px_rgba(0,255,180,0.5)] overflow-hidden"
+            className="relative w-56 h-56 rounded-full bg-gradient-to-r from-green-500/30 to-purple-500/30 flex items-center justify-center border border-white/10 shadow-[0_0_40px_rgba(0,255,180,0.5)] overflow-hidden z-10"
             animate={{ rotate: 360 }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           >
@@ -63,8 +115,8 @@ export default function GoalsPage() {
             />
           </motion.div>
 
-          {/* Left side (3 goals) */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-12">
+          {/* Left side goals */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-12 z-10">
             {goals.slice(0, 3).map((goal, i) => (
               <motion.div
                 key={i}
@@ -95,8 +147,8 @@ export default function GoalsPage() {
             ))}
           </div>
 
-          {/* Right side (3 goals) */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-12">
+          {/* Right side goals */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-12 z-10">
             {goals.slice(3).map((goal, i) => (
               <motion.div
                 key={i}
@@ -129,7 +181,7 @@ export default function GoalsPage() {
         </div>
       </div>
 
-      {/* Custom Spin Animation */}
+      {/* Custom Styles */}
       <style jsx>{`
         .animate-spin-slow {
           animation: spin 12s linear infinite;
@@ -142,7 +194,31 @@ export default function GoalsPage() {
             transform: rotate(360deg);
           }
         }
+
+        .neon-line {
+          stroke: url(#neonGradient);
+          stroke-width: 2;
+          stroke-dasharray: 6 6;
+          animation: dashFlow 4s linear infinite;
+          filter: drop-shadow(0 0 6px rgba(0, 255, 200, 0.8));
+        }
+
+        @keyframes dashFlow {
+          to {
+            stroke-dashoffset: -100;
+          }
+        }
       `}</style>
+
+      {/* Neon Gradient for Lines */}
+      <svg width="0" height="0">
+        <defs>
+          <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop stopColor="#00ffcc" offset="0%" />
+            <stop stopColor="#a855f7" offset="100%" />
+          </linearGradient>
+        </defs>
+      </svg>
     </main>
   );
 }

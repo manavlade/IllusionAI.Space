@@ -78,7 +78,7 @@ export default function Footer() {
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium shadow-lg"
             >
-              Get Started
+              <a href="#contact">Get Started</a>
             </motion.button>
           </motion.div>
         </motion.div>
