@@ -8,10 +8,44 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Clock, Mail, MapPin, Phone, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
+
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      subject: formData.get("subject") as string,
+      message: formData.get("message") as string || "",
+    };
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await res.json();
+
+    if (res.ok) {
+      setLoading(false);
+      toast.success(result.message);
+    } else {
+      setLoading(false);
+      toast.error(result.message);
+    }
+  }
+
   return (
 
     <main id="contact" className="relative bg-black text-white overflow-hidden">
@@ -131,6 +165,7 @@ export default function ContactPage() {
 
           {/* Right Column - Form */}
           <motion.form
+          onSubmit={handleSubmit}
             className="space-y-6"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -139,24 +174,29 @@ export default function ContactPage() {
           >
             <Input
               type="text"
+              name="name"
               placeholder="Full Name"
               className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500"
             />
 
             <Input
               type="email"
+              name="email"
               placeholder="Email Address"
               className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500"
             />
 
 
             <Input
+              type="text"
+              name="subject"
               placeholder="Subject"
               className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500"
             />
 
 
             <Textarea
+              name="message"
               placeholder="Write your message..."
               className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500 min-h-[150px]"
             />
@@ -185,7 +225,7 @@ export default function ContactPage() {
               type="submit"
               className="bg-gradient-to-r from-green-600 to-purple-600 hover:from-green-500 hover:to-purple-500 text-white font-semibold py-2 rounded-xl shadow-lg shadow-green-500/20 transition-transform duration-200 hover:scale-105"
             >
-              Submit
+              {loading ? "Sending..." : "Submit"}
             </Button>
           </motion.form>
         </div>
