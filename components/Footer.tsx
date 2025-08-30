@@ -47,11 +47,11 @@ export default function Footer() {
       </section> */}
 
      
-      <section className="w-full flex justify-center px-6 -mt-10 z-10 relative overflow-hidden">
+      <section className="w-full flex justify-center -mt-10 z-10 relative overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-black to-blue-900 animate-gradient opacity-40 blur-3xl" />
 
-      <div className="w-full max-w-6xl bg-gradient-to-br from-black via-neutral-900 to-black rounded-2xl text-white shadow-2xl flex flex-col md:flex-row justify-between items-center px-10 py-16 relative overflow-hidden border border-neutral-800 backdrop-blur-md">
+      <div className="w-full max-w-[90%] bg-gradient-to-br from-black via-neutral-900 to-black rounded-2xl text-white shadow-2xl flex flex-col md:flex-row justify-between items-center px-10 py-16 relative overflow-hidden border border-neutral-800 backdrop-blur-md">
         
         {/* Floating Glow Circles */}
         <div className="absolute -top-20 -left-20 w-72 h-72 bg-purple-600/30 rounded-full blur-3xl animate-pulse" />
@@ -119,7 +119,7 @@ export default function Footer() {
 
       {/* Footer */}
       <footer className="bg-black text-white mt-0 py-14 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
+        <div className="max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
           {/* Company info */}
           <div className="flex flex-col gap-3">
             <h3 className="text-lg font-bold">Illusion AI</h3>

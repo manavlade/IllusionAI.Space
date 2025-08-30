@@ -99,7 +99,7 @@ const ServicesPage = () => {
   return (
     <div
       id="services"
-      className="relative min-h-screen bg-black py-20 px-4 overflow-hidden"
+      className="relative min-h-screen bg-black py-20  overflow-hidden"
     >
       {/* 🔥 Futuristic Animated Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -152,7 +152,7 @@ const ServicesPage = () => {
           transition={{ duration: 0.8 }}
           className="h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6 rounded-full"
         />
-        <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg text-gray-400 max-w-[90%] mx-auto leading-relaxed">
           We empower businesses with intelligent automation, personalized AI
           agents, and futuristic chatbots that enhance productivity and
           decision-making.
@@ -160,7 +160,7 @@ const ServicesPage = () => {
       </motion.div>
 
       {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[90%] mx-auto">
         {services.map((service, index) => (
           <motion.div
             key={service.id}

@@ -38,7 +38,7 @@ export default function ValuesPage() {
       <div className="absolute -top-28 -left-28 w-96 h-96 bg-green-600/30 blur-[150px] rounded-full animate-pulse" />
       <div className="absolute -bottom-28 -right-28 w-96 h-96 bg-purple-600/30 blur-[150px] rounded-full animate-pulse delay-1000" />
 
-      <div className="relative max-w-6xl mx-auto px-6 py-20">
+      <div className="relative max-w-[90%] mx-auto py-20">
         {/* Header */}
         <motion.div
           className="text-center mb-16 space-y-6"

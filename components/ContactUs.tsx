@@ -6,17 +6,20 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Clock, Mail, MapPin, Phone, Sparkles } from "lucide-react"; // Using Sparkles as logo placeholder
+import { Clock, Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactPage() {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState<string | null>(null);
   return (
 
     <main id="contact" className="relative bg-black text-white overflow-hidden">
-      {/* Background gradient overlay */}
+
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/30 via-black to-purple-900/30 pointer-events-none" />
 
       {/* Wrapper */}
-      <div className="relative max-w-6xl mx-auto px-6 py-20">
+      <div className="relative max-w-[90%] mx-auto py-20">
         {/* Header Section */}
         <div className="text-center mb-20 relative">
           {/* Glowing blobs */}
@@ -98,24 +101,24 @@ export default function ContactPage() {
 
             </div>
 
-          <div className="space-y-3 text-neutral-300 text-base leading-relaxed mt-4">
-  <p className="flex items-center gap-2">
-    <Phone className="w-5 h-5 text-green-400" />
-    <span className="text-white font-medium">9766675853</span>
-  </p>
-  <p className="flex items-center gap-2">
-    <Mail className="w-5 h-5 text-blue-400" />
-    <span className="text-white font-medium">infoillusionai@gmail.com</span>
-  </p>
-  <p className="flex items-center gap-2">
-    <MapPin className="w-5 h-5 text-red-400" />
-    <span className="text-white font-medium">Mumbai</span>
-  </p>
-  <p className="flex items-center gap-2">
-    <Clock className="w-5 h-5 text-yellow-400" />
-    <span className="text-white font-medium">Within 24 hours</span>
-  </p>
-</div>
+            <div className="space-y-3 text-neutral-300 text-base leading-relaxed mt-4">
+              <p className="flex items-center gap-2">
+                <Phone className="w-5 h-5 text-green-400" />
+                <span className="text-white font-medium">9766675853</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <Mail className="w-5 h-5 text-blue-400" />
+                <span className="text-white font-medium">infoillusionai@gmail.com</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-red-400" />
+                <span className="text-white font-medium">Mumbai</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <Clock className="w-5 h-5 text-yellow-400" />
+                <span className="text-white font-medium">Within 24 hours</span>
+              </p>
+            </div>
 
             <p className="text-lg text-neutral-300 mt-6">
               Ready to start your{" "}
