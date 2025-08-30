@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge, SparklesIcon } from "lucide-react";
+import { SparklesIcon } from "lucide-react";
 import { SkiperCard } from "./ui/skiper-card";
 import { cn } from "@/lib/utils";
 import step1light1Img from "@/public/step1light1.jpg";
@@ -11,6 +11,7 @@ import step3lightImg from "@/public/step3light.jpg";
 import step4lightImg from "@/public/step4light.jpg";
 import { BackgroundBeams } from "./ui/background-beams";
 import { motion } from "framer-motion";
+import { Badge } from "./ui/badge";
 
 // Animation variants
 const fadeInUp = {
@@ -55,7 +56,7 @@ export const ProductsPage = () => {
                   className="mb-12 rounded-full border border-white/20 bg-black/30 px-6 py-3 text-base backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:bg-black/50 group"
                 >
                   <SparklesIcon className="mr-2 fill-[#EEBDE0] stroke-1 text-neutral-200 transition-transform duration-300 group-hover:rotate-12" />
-                  <span className="text-white bg-gradient-to-r from-white to-neutral-300 bg-clip-text text-transparent">
+                  <span className="text-white bg-gradient-to-r from-white to-neutral-300 bg-clip-text ">
                     Our Products
                   </span>
                 </Badge>
@@ -114,7 +115,7 @@ export const ProductsPage = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="relative z-10 w-full overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-950 to-white p-3">
+                {/* <div className="relative z-10 w-full overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-950 to-white p-3">
                   <SkiperCard
                     step1img1Class={cn(
                       "pointer-events-none w-[50%] border border-white/10 transition-all duration-500 shadow-lg",
@@ -157,7 +158,7 @@ export const ProductsPage = () => {
                     }}
                     title=""
                   />
-                </div>
+                </div> */}
               </motion.div>
               
               {/* Enhanced call to action */}
