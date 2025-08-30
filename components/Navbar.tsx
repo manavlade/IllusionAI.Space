@@ -18,28 +18,38 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedTestimonialsDemo } from "./Testimonials";
 import { ProductsPage } from "./ProductsPage";
 import ServicesPage from "./ServicesPage";
+import ProductsCarousel from "./ProductsCarousel";
+import TrustedBy from "./TrustedBy";
+import ValuesPage from "./ValuesPage";
+import GoalsPage from "./GoalsPage";
+import WelcomePage from "./WelcomePage";
+import Pricing from "./Priceing";
 
 export function NavPage() {
   const navItems = [
     {
       name: "Home",
-      link: "/",
+      link: "#home",
     },
     {
       name: "About Us",
-      link: "/about",
-    },
-    {
-      name: "Services",
-      link: "/services",
+      link: "#about",
     },
     {
       name: "Products",
-      link: "/products",
+      link: "#products",
     },
+      {
+      name: "Services",
+      link: "#services",
+    },
+    // {
+    //   name: "Features",
+    //   link: "#features",
+    // },
     {
-      name: "Features",
-      link: "#features",
+      name: "Contact",
+      link: "#contact",
     },
     {
       name: "Pricing",
@@ -59,7 +69,7 @@ export function NavPage() {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen overflow-x-hidden">
+    <div id="home" className="relative w-full min-h-screen overflow-x-hidden">
       {/* Animated background elements */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600 rounded-full filter blur-3xl opacity-20 animate-pulse-slow"></div>
@@ -88,7 +98,9 @@ export function NavPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <NavbarButton variant="dark">Get Started</NavbarButton>
+                <NavbarButton className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium shadow-lg">
+                  <a href="#contact">Get Started</a>
+                </NavbarButton>
               </motion.div>
             </div>
           </NavBody>
@@ -129,7 +141,7 @@ export function NavPage() {
                     variant="dark"
                     className="w-full"
                   >
-                    Login
+                    <a href="#contact">Get Started</a>
                   </NavbarButton>
                 </motion.div>
               </div>
@@ -138,14 +150,25 @@ export function NavPage() {
         </Navbar>
       </motion.div>
       <BackgroudBeam />
-      <ProductsPage/>
-      <ServicesPage/>
-      <AnimatedTestimonialsDemo />
-      <ContactPage /> 
+      {/* <ProductsPage/> */}
+      {/* <TrustedBy /> */}
+      <WelcomePage />
+      <GoalsPage />
+      <ValuesPage />
+      <ProductsCarousel />
+      <ServicesPage />
+      <AboutUs />
+      {/* <AnimatedTestimonialsDemo /> */}
+      {/* <Pricing/> */}
+      <ContactPage />
       <Footer />
     </div>
   );
 }
+
+const AboutUs = () => {
+  return <></>;
+};
 
 const BackgroudBeam = () => {
   return (
@@ -168,7 +191,7 @@ const BackgroudBeam = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              Where AI Meets Infinite Wisdom
+              Deeptech that simplifies complexity
             </motion.span>
           </h1>
           <motion.p
@@ -178,7 +201,8 @@ const BackgroudBeam = () => {
             className="text-base md:text-lg mt-6 text-white/80 font-normal inter-var text-center max-w-3xl mx-auto leading-relaxed"
           >
             AI that can read your future, solve your business problems, and
-            teach you the secrets of the universe — all in one place.
+            teach you the secrets of the universe, help you to research and
+            automate the task — all in one place.
           </motion.p>
 
           <motion.div
@@ -192,15 +216,15 @@ const BackgroudBeam = () => {
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium shadow-lg"
             >
-              Get Started
+              <a href="#contact">Get Started</a>
             </motion.button>
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-white/10 text-white backdrop-blur-sm rounded-lg font-medium border border-white/20"
             >
               View Demo
-            </motion.button>
+            </motion.button> */}
           </motion.div>
         </motion.div>
       </WavyBackground>
