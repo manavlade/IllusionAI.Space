@@ -98,85 +98,86 @@ const ProductsCarousel = () => {
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-700 opacity-20 blur-3xl rounded-full" />
 
       {/* Content */}
-      <div className="relative w-full max-w-6xl mx-auto px-4 z-10">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 mb-4">
-            Products
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Discover our cutting-edge AI solutions that bridge technology with
-            human consciousness
-          </p>
-        </div>
+      <div className="relative w-[90%] max-w-7xl mx-auto z-10">
+        <div className=" items-center justify-center " >
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 mb-4">
+              Products
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Discover our cutting-edge AI solutions that bridge technology with
+              human consciousness
+            </p>
+          </div>
 
-        {/* Carousel */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-950 via-black to-neutral-950 border border-gray-800 shadow-2xl h-96">
-          {/* Slide */}
-          <div className="relative h-full">
-            <AnimatePresence custom={direction} initial={false}>
-              <motion.div
-                key={currentIndex}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.4 },
-                  scale: { duration: 0.4 },
-                }}
-                className="absolute inset-0 flex flex-col md:flex-row items-center justify-between p-8"
-              >
-                {/* Info */}
-                <div className="flex-1 max-w-md space-y-6 z-10">
-                  <div>
-                    <h3 className="text-3xl font-bold text-white mb-2">
-                      {products[currentIndex].title}
-                    </h3>
-                    <p className="text-purple-300 font-medium mb-4">
-                      {products[currentIndex].subtitle}
+          {/* Carousel */}
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-950 via-black to-neutral-950 border border-gray-800 shadow-2xl h-96">
+            {/* Slide */}
+            <div className="relative h-full">
+              <AnimatePresence custom={direction} initial={false}>
+                <motion.div
+                  key={currentIndex}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.4 },
+                    scale: { duration: 0.4 },
+                  }}
+                  className="absolute inset-0 flex flex-col md:flex-row items-center justify-between p-8"
+                >
+                  {/* Info */}
+                  <div className="flex-1 w-full space-y-6 z-10">
+                    <div>
+                      <h3 className="text-3xl font-bold text-white mb-2">
+                        {products[currentIndex].title}
+                      </h3>
+                      <p className="text-purple-300 font-medium mb-4">
+                        {products[currentIndex].subtitle}
+                      </p>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">
+                      {products[currentIndex].description}
                     </p>
+
+                    <button
+                      className={`px-6 py-3 rounded-lg bg-gradient-to-r ${products[currentIndex].color} text-white font-medium hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg`}
+                    >
+                      {products[currentIndex].cta}
+                    </button>
                   </div>
-                  <p className="text-gray-300 leading-relaxed">
-                    {products[currentIndex].description}
-                  </p>
 
-                  <button
-                    className={`px-6 py-3 rounded-lg bg-gradient-to-r ${products[currentIndex].color} text-white font-medium hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg`}
-                  >
-                    {products[currentIndex].cta}
-                  </button>
-                </div>
-
-                {/* Visual with image */}
-                <div className="flex-1 flex items-center justify-center relative">
-                  <div className="relative w-64 h-64 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
-                    <img
-                      src={products[currentIndex].image}
-                      alt={products[currentIndex].title}
-                      className="w-full h-full object-cover"
-                    />
+                  {/* Visual with image */}
+                  <div className="flex-1 flex items-center justify-center relative">
+                    <div className="relative w-70 h-70 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+                      <img
+                        src={products[currentIndex].image}
+                        alt={products[currentIndex].title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-          {/* Indicators */}
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
-            {products.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => navigateTo(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? "bg-purple-500 w-8" : "bg-gray-600"
-                }`}
-              />
-            ))}
+            {/* Indicators */}
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
+              {products.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => navigateTo(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-purple-500 w-8" : "bg-gray-600"
+                    }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ const goals = [
 
 export default function GoalsPage() {
   return (
-    <main className="relative bg-black text-white overflow-hidden py-20">
+    <main className="relative bg-black text-white overflow-hidden py-24">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-black to-purple-900/20 pointer-events-none" />
       <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] bg-green-600/20 rounded-full blur-[200px] animate-pulse" />
