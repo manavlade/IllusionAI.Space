@@ -42,16 +42,12 @@ export function NavPage() {
         <CustomNavbar/>
       </motion.div>
       <BackgroudBeam />
-      {/* <ProductsPage/> */}
-      {/* <TrustedBy /> */}
       <WelcomePage />
       <GoalsPage />
       <ValuesPage />
       <ProductsCarousel />
       <ServicesPage />
       <AboutUs />
-      {/* <AnimatedTestimonialsDemo /> */}
-      {/* <Pricing/> */}
       <ContactPage />
       <Footer />
     </div>
@@ -73,7 +69,7 @@ const BackgroudBeam = () => {
           className="max-w-6xl mx-auto px-4"
         >
           <h1 className="text-4xl md:text-5xl lg:text-7xl text-white font-bold inter-var text-center">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
+            <span className="bg-clip-text ">
               Illusion AI
             </span>{" "}
             <br />

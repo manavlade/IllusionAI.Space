@@ -98,7 +98,7 @@ const ProductsCarousel = () => {
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-700 opacity-20 blur-3xl rounded-full" />
 
       {/* Content */}
-      <div className="relative w-[90%] max-w-7xl mx-auto z-10">
+      <div className="relative w-[90%]  mx-auto z-10">
         <div className=" items-center justify-center " >
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 mb-4">
