@@ -1,63 +1,17 @@
 "use client";
-import {
-  Navbar,
-  NavBody,
-  NavItems,
-  MobileNav,
-  NavbarLogo,
-  NavbarButton,
-  MobileNavHeader,
-  MobileNavToggle,
-  MobileNavMenu,
-} from "@/components/ui/resizable-navbar";
 import { useState, useEffect } from "react";
 import ContactPage from "./ContactUs";
 import Footer from "./Footer";
 import { WavyBackground } from "./ui/wavy-background";
-import { motion, AnimatePresence } from "framer-motion";
-import { AnimatedTestimonialsDemo } from "./Testimonials";
-import { ProductsPage } from "./ProductsPage";
+import { motion } from "framer-motion";
 import ServicesPage from "./ServicesPage";
 import ProductsCarousel from "./ProductsCarousel";
-import TrustedBy from "./TrustedBy";
 import ValuesPage from "./ValuesPage";
 import GoalsPage from "./GoalsPage";
 import WelcomePage from "./WelcomePage";
-import Pricing from "./Priceing";
+import CustomNavbar from "./CustomNav";
 
 export function NavPage() {
-  const navItems = [
-    {
-      name: "Home",
-      link: "#home",
-    },
-    {
-      name: "About Us",
-      link: "#about",
-    },
-    {
-      name: "Products",
-      link: "#products",
-    },
-      {
-      name: "Services",
-      link: "#services",
-    },
-    // {
-    //   name: "Features",
-    //   link: "#features",
-    // },
-    {
-      name: "Contact",
-      link: "#contact",
-    },
-    {
-      name: "Pricing",
-      link: "#pricing",
-    },
-  ];
-
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -80,74 +34,12 @@ export function NavPage() {
       <motion.div
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
             ? "bg-black/80 backdrop-blur-md shadow-lg"
             : "bg-transparent"
-        }`}
+          }`}
       >
-        <Navbar>
-          {/* Desktop Navigation */}
-          <NavBody>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <NavbarLogo />
-            </motion.div>
-            <NavItems items={navItems} />
-            <div className="flex items-center gap-4">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <NavbarButton className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium shadow-lg">
-                  <a href="#contact">Get Started</a>
-                </NavbarButton>
-              </motion.div>
-            </div>
-          </NavBody>
-
-          {/* Mobile Navigation */}
-          <MobileNav>
-            <MobileNavHeader>
-              <NavbarLogo />
-              <MobileNavToggle
-                isOpen={isMobileMenuOpen}
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              />
-            </MobileNavHeader>
-
-            <MobileNavMenu
-              isOpen={isMobileMenuOpen}
-              onClose={() => setIsMobileMenuOpen(false)}
-            >
-              {navItems.map((item, idx) => (
-                <motion.a
-                  key={`mobile-link-${idx}`}
-                  href={item.link}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="relative text-white py-3 text-lg font-medium border-b border-white/10"
-                  whileHover={{ x: 10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <span className="block">{item.name}</span>
-                </motion.a>
-              ))}
-              <div className="flex w-full flex-col gap-4 mt-4">
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <NavbarButton
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    variant="dark"
-                    className="w-full"
-                  >
-                    <a href="#contact">Get Started</a>
-                  </NavbarButton>
-                </motion.div>
-              </div>
-            </MobileNavMenu>
-          </MobileNav>
-        </Navbar>
+        <CustomNavbar/>
       </motion.div>
       <BackgroudBeam />
       {/* <ProductsPage/> */}
@@ -186,7 +78,7 @@ const BackgroudBeam = () => {
             </span>{" "}
             <br />
             <motion.span
-              className="text-xl md:text-2xl lg:text-3xl font-light mt-4 block"
+              className="text-xl md:text-2xl lg:text-3xl font-light mt-4 block bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-white to-purple-400"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -194,15 +86,14 @@ const BackgroudBeam = () => {
               Deeptech that simplifies complexity
             </motion.span>
           </h1>
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-base md:text-lg mt-6 text-white/80 font-normal inter-var text-center max-w-3xl mx-auto leading-relaxed"
           >
-            AI that can read your future, solve your business problems, and
-            teach you the secrets of the universe, help you to research and
-            automate the task — all in one place.
+            Explore our solutions, discover our projects, and experience the future with ILLUSION AI
           </motion.p>
 
           <motion.div
@@ -216,7 +107,7 @@ const BackgroudBeam = () => {
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium shadow-lg"
             >
-              <a href="#contact">Get Started</a>
+              <a href="#contact">Explore Services and Products</a>
             </motion.button>
             {/* <motion.button
               whileHover={{ scale: 1.05 }}

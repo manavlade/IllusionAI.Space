@@ -13,7 +13,7 @@ export default function WelcomePage() {
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-green-600/20 rounded-full blur-[120px] animate-pulse" />
       <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] animate-pulse delay-1000" />
 
-      <div className="relative max-w-6xl mx-auto px-6 py-20 space-y-24">
+      <div className="relative max-w-[90%] mx-auto py-20 space-y-24">
         {/* Welcome Section */}
         <motion.div
           className="text-center space-y-6"
@@ -25,7 +25,7 @@ export default function WelcomePage() {
           <h1 className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-white to-purple-400">
             Welcome to Illusion AI
           </h1>
-          <p className="text-neutral-300 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-neutral-300 text-lg max-w-5xl mx-auto leading-relaxed">
             Where{" "}
             <span className="text-green-400 font-semibold">deep technology</span>{" "}
             meets{" "}
