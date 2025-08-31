@@ -42,7 +42,7 @@ export default function ValuesPage() {
       <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] bg-green-600/20 rounded-full blur-[200px] animate-pulse" />
       <div className="absolute -bottom-40 -right-40 w-[40rem] h-[40rem] bg-purple-600/20 rounded-full blur-[200px] animate-pulse delay-1000" />
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-[90%] mx-auto px-6">
         {/* Header */}
         <motion.div
           className="text-center mb-32 space-y-6"

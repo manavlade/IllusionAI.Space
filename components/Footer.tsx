@@ -1,52 +1,13 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import {motion} from 'framer-motion';
+import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 export default function Footer() {
+
+  const router = useRouter();
   return (
     <main className="flex flex-col min-h-screen text-white bg-black">
-        {/*
-      <section className="w-full flex justify-center py-20 px-4">
-       <div className="max-w-3xl w-full text-center">
-          <h2 className="text-2xl md:text-3xl font-bold">
-            Subscribe to our newsletter
-          </h2>
-          <p className="mt-2 text-neutral-600">
-            Sign up today and get a free sample up to 100 records.
-          </p>
-
-          <div className="mt-6 flex items-center justify-center gap-2">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="w-full max-w-md px-4 py-3 rounded-xl border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-black"
-            />
-            <Button className="rounded-xl font-semibold px-6">
-              Get started
-            </Button>
-          </div>
-
-          <div className="mt-4 flex items-center justify-center gap-2 text-sm text-neutral-500">
-            <span>Our experts are ready to help!</span>
-            <div className="flex -space-x-2">
-              <img
-                src="https://randomuser.me/api/portraits/women/1.jpg"
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
-              <img
-                src="https://randomuser.me/api/portraits/men/2.jpg"
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
-              <img
-                src="https://randomuser.me/api/portraits/women/3.jpg"
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-     
       <section className="w-full flex justify-center -mt-10 z-10 relative overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-black to-blue-900 animate-gradient opacity-40 blur-3xl" />
@@ -119,7 +80,7 @@ export default function Footer() {
 
       {/* Footer */}
       <footer className="bg-black text-white mt-0 py-14 px-6">
-        <div className="max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
+        <div className="max-w-[90%] mx-auto grid grid-cols-2 md:grid-cols-3 gap-10 text-sm">
           {/* Company info */}
           <div className="flex flex-col gap-3">
             <h3 className="text-lg font-bold">Illusion AI</h3>
@@ -139,23 +100,19 @@ export default function Footer() {
             <a href="#products" className="hover:text-neutral-300">Products</a>
             <a href="#contact" className="hover:text-neutral-300">Contact us</a>
           </div>
-
-          {/* Social */}
-          <div className="flex flex-col gap-2">
-            <h4 className="font-semibold mb-2">Social</h4>
-            <a href="#" className="hover:text-neutral-300">Facebook</a>
-            <a href="#" className="hover:text-neutral-300">Instagram</a>
-            <a href="#" className="hover:text-neutral-300">LinkedIn</a>
-            <a href="#" className="hover:text-neutral-300">Twitter</a>
-            <a href="#" className="hover:text-neutral-300">Discord</a>
-          </div>
-
           {/* Legal */}
           <div className="flex flex-col gap-2">
             <h4 className="font-semibold mb-2">Legal</h4>
-            <a href="#" className="hover:text-neutral-300">Terms of service</a>
-            <a href="#" className="hover:text-neutral-300">Privacy policy</a>
-            <a href="#" className="hover:text-neutral-300">Cookie policy</a>
+            <a href="/termsandcondition" className="hover:text-neutral-300">Terms of service</a>
+            <a href="/privacypolicy" className="hover:text-neutral-300">Privacy policy</a>
+            <a href="/cookiepolicy" className="hover:text-neutral-300">Cookie policy</a>
+          </div>
+
+          <div className=' flex flex-row gap-5'>
+            <a href="#" className="hover:text-neutral-300"><Facebook /></a>
+            <a href="#" className="hover:text-neutral-300"><Instagram /></a>
+            <a href="#" className="hover:text-neutral-300"><Linkedin /></a>
+            <a href="#" className="hover:text-neutral-300"><Twitter /></a>
           </div>
         </div>
 
