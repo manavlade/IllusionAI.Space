@@ -103,7 +103,7 @@ const BackgroudBeam = () => {
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium shadow-lg"
             >
-              <a href="#contact">Explore Services and Products</a>
+              <a href="#services">Explore Services and Products</a>
             </motion.button>
             {/* <motion.button
               whileHover={{ scale: 1.05 }}
