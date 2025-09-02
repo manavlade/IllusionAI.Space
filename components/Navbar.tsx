@@ -89,7 +89,8 @@ const BackgroudBeam = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-base md:text-lg mt-6 text-white/80 font-normal inter-var text-center max-w-3xl mx-auto leading-relaxed"
           >
-            Explore our solutions, discover our projects, and experience the future with ILLUSION AI
+           AI that can read your future, solve your business problems, and teach you the secrets of the
+           universe, help you to research and automate the task all in one place.
           </motion.p>
 
           <motion.div
@@ -103,7 +104,7 @@ const BackgroudBeam = () => {
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium shadow-lg"
             >
-              <a href="#contact">Explore Services and Products</a>
+              <a href="#services">Explore Services and Products</a>
             </motion.button>
             {/* <motion.button
               whileHover={{ scale: 1.05 }}

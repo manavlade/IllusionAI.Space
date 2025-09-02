@@ -9,22 +9,33 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Clock, Mail, MapPin, Phone, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().min(3, "Name must be at least 3 characters long"),
+  email: z.email("Invalid email address"),
+  subject: z.string().min(3, "Subject must be at least 3 characters long"),
+  message: z.string().min(10, "Message must be at least 10 characters long"),
+  agree: z.boolean().refine((value) => value, "You must agree to the terms and conditions"),
+});
+
+type contactFormSchema = z.infer<typeof contactSchema>;
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState<string | null>(null);
-
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-
+    
+    const form = e.currentTarget;
     const formData = new FormData(e.currentTarget);
-    const data = {
+    const data: contactFormSchema = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
       subject: formData.get("subject") as string,
       message: formData.get("message") as string || "",
+      agree: formData.get("agree") as string === "yes",
     };
 
     const res = await fetch("/api/contact", {
@@ -40,6 +51,7 @@ export default function ContactPage() {
     if (res.ok) {
       setLoading(false);
       toast.success(result.message);
+      form.reset();
     } else {
       setLoading(false);
       toast.error(result.message);
@@ -165,7 +177,7 @@ export default function ContactPage() {
 
           {/* Right Column - Form */}
           <motion.form
-          onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
             className="space-y-6"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -175,6 +187,7 @@ export default function ContactPage() {
             <Input
               type="text"
               name="name"
+              required
               placeholder="Full Name"
               className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500"
             />
@@ -182,6 +195,7 @@ export default function ContactPage() {
             <Input
               type="email"
               name="email"
+              required
               placeholder="Email Address"
               className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500"
             />
@@ -190,6 +204,7 @@ export default function ContactPage() {
             <Input
               type="text"
               name="subject"
+              required
               placeholder="Subject"
               className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500"
             />
@@ -197,13 +212,14 @@ export default function ContactPage() {
 
             <Textarea
               name="message"
+              required
               placeholder="Write your message..."
               className="bg-neutral-800/80 border border-neutral-600 text-white placeholder:text-neutral-400 focus:ring-2 focus:ring-green-500 min-h-[150px]"
             />
 
             {/* Agreement */}
             <div className="flex items-start gap-2">
-              <Checkbox id="agree" />
+              <Checkbox required id="agree" name="agree" value="yes" />
 
               <label
                 htmlFor="agree"
