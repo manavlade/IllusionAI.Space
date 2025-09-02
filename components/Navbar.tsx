@@ -89,7 +89,8 @@ const BackgroudBeam = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-base md:text-lg mt-6 text-white/80 font-normal inter-var text-center max-w-3xl mx-auto leading-relaxed"
           >
-            Explore our solutions, discover our projects, and experience the future with ILLUSION AI
+           AI that can read your future, solve your business problems, and teach you the secrets of the
+           universe, help you to research and automate the task all in one place.
           </motion.p>
 
           <motion.div
