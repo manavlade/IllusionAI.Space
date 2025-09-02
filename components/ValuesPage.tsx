@@ -36,27 +36,27 @@ const values = [
 
 export default function ValuesPage() {
   return (
-    <main className="relative bg-black text-white overflow-hidden py-32">
+    <main className="relative bg-black text-white overflow-hidden py-24 md:py-32">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-black to-purple-900/20 pointer-events-none" />
       <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] bg-green-600/20 rounded-full blur-[200px] animate-pulse" />
       <div className="absolute -bottom-40 -right-40 w-[40rem] h-[40rem] bg-purple-600/20 rounded-full blur-[200px] animate-pulse delay-1000" />
 
-      <div className="relative max-w-[90%] mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-32 space-y-6"
+          className="text-center mb-20 space-y-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-white to-purple-400">
+          <h1 className="text-4xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-white to-purple-400">
             Our Values
           </h1>
-          <p className="text-neutral-300 text-lg max-w-3xl mx-auto leading-relaxed">
-            At <span className="text-green-400 font-semibold">Illusion AI</span>
-            , our values guide every solution we create — blending
+          <p className="text-neutral-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+            At <span className="text-green-400 font-semibold">Illusion AI</span>,
+            our values guide every solution we create — blending
             <span className="text-purple-400"> innovation</span>,
             <span className="text-green-400"> ethics</span>, and
             <span className="text-white"> human empowerment</span>.
@@ -64,89 +64,16 @@ export default function ValuesPage() {
         </motion.div>
 
         {/* Layout */}
-        <div className="relative flex items-center justify-center">
-          {/* Central Image */}
-          <div className="relative z-10 w-[620px] h-[400px]">
-            <img
-              src="./valuesekelton.png"
-              alt="Illusion AI Logo"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          {/* Neon circuit lines (SVG layer) */}
-          <svg
-            className="absolute inset-0 w-full h-full pointer-events-none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Left upper line */}
-            <motion.path
-              d="M 50% 50% L 20% 35%"
-              stroke="url(#neonBlue)"
-              strokeWidth="3"
-              fill="none"
-              strokeLinecap="round"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 2, delay: 0.3 }}
-            />
-            {/* Left lower line */}
-            <motion.path
-              d="M 50% 50% L 20% 65%"
-              stroke="url(#neonBlue)"
-              strokeWidth="3"
-              fill="none"
-              strokeLinecap="round"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 2, delay: 0.6 }}
-            />
-            {/* Right upper line */}
-            <motion.path
-              d="M 50% 50% L 80% 35%"
-              stroke="url(#neonPink)"
-              strokeWidth="3"
-              fill="none"
-              strokeLinecap="round"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 2, delay: 0.9 }}
-            />
-            {/* Right lower line */}
-            <motion.path
-              d="M 50% 50% L 80% 65%"
-              stroke="url(#neonPink)"
-              strokeWidth="3"
-              fill="none"
-              strokeLinecap="round"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 2, delay: 1.2 }}
-            />
-
-            {/* Neon gradients */}
-            <defs>
-              <linearGradient id="neonBlue" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#00faff" />
-                <stop offset="100%" stopColor="#007bff" />
-              </linearGradient>
-              <linearGradient id="neonPink" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#ff00ff" />
-                <stop offset="100%" stopColor="#ff66cc" />
-              </linearGradient>
-            </defs>
-          </svg>
-
+        <div className="relative flex flex-col md:flex-row items-center justify-center gap-10 md:gap-0">
           {/* Left side values */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-44 z-30">
+          <div className="flex flex-col gap-20 md:gap-44 z-30 md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2">
             {values.slice(0, 2).map((val, i) => {
               const Icon = val.icon;
               return (
                 <motion.div
                   key={i}
-                  className={`relative drop-shadow-[0_0_40px_rgba(0,150,255,0.7)]
- bg-neutral-900/70 backdrop-blur-xl border border-white/10 rounded-2xl p-6 w-80 shadow-lg hover:${val.glow} transition duration-300`}
-                  initial={{ opacity: 0, x: -80 }}
+                  className={`relative bg-neutral-900/70 backdrop-blur-xl border border-white/10 rounded-2xl p-6 w-72 md:w-80 shadow-lg hover:${val.glow} transition duration-300`}
+                  initial={{ opacity: 0, x: -60 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: i * 0.2 }}
                   viewport={{ once: true }}
@@ -168,16 +95,87 @@ export default function ValuesPage() {
             })}
           </div>
 
+          {/* Central Logo (hidden on small screens) */}
+          <div className="relative z-10 hidden md:block w-[500px] h-[300px] lg:w-[720px] lg:h-[400px]">
+            <img
+              src="./valuesekelton.png"
+              alt="Illusion AI Logo"
+              className="w-full h-full object-contain"
+            />
+
+            {/* Neon circuit lines */}
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Left upper line */}
+              <motion.path
+                d="M 50% 50% L 15% 35%"
+                stroke="url(#neonBlue)"
+                strokeWidth="3"
+                fill="none"
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, delay: 0.3 }}
+              />
+              {/* Left lower line */}
+              <motion.path
+                d="M 50% 50% L 15% 65%"
+                stroke="url(#neonBlue)"
+                strokeWidth="3"
+                fill="none"
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, delay: 0.6 }}
+              />
+              {/* Right upper line */}
+              <motion.path
+                d="M 50% 50% L 85% 35%"
+                stroke="url(#neonPink)"
+                strokeWidth="3"
+                fill="none"
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, delay: 0.9 }}
+              />
+              {/* Right lower line */}
+              <motion.path
+                d="M 50% 50% L 85% 65%"
+                stroke="url(#neonPink)"
+                strokeWidth="3"
+                fill="none"
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, delay: 1.2 }}
+              />
+
+              {/* Neon gradients */}
+              <defs>
+                <linearGradient id="neonBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#00faff" />
+                  <stop offset="100%" stopColor="#007bff" />
+                </linearGradient>
+                <linearGradient id="neonPink" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#ff00ff" />
+                  <stop offset="100%" stopColor="#ff66cc" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
           {/* Right side values */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-44 z-30">
+          <div className="flex flex-col gap-20 md:gap-44 z-30 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2">
             {values.slice(2).map((val, i) => {
               const Icon = val.icon;
               return (
                 <motion.div
                   key={i}
-                  className={`relative drop-shadow-[0_0_40px_rgba(0,0,255,0.7)]
- bg-neutral-900/70 backdrop-blur-xl border border-white/10 rounded-2xl p-6 w-80 shadow-lg hover:${val.glow} transition duration-300`}
-                  initial={{ opacity: 0, x: 80 }}
+                  className={`relative bg-neutral-900/70 backdrop-blur-xl border border-white/10 rounded-2xl p-6 w-72 md:w-80 shadow-lg hover:${val.glow} transition duration-300`}
+                  initial={{ opacity: 0, x: 60 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: i * 0.2 }}
                   viewport={{ once: true }}
