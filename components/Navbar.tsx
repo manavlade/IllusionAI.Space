@@ -35,11 +35,11 @@ export function NavPage() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? "bg-black/80 backdrop-blur-md shadow-lg"
-            : "bg-transparent"
+          ? "bg-black/80 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
           }`}
       >
-        <CustomNavbar/>
+        <CustomNavbar />
       </motion.div>
       <BackgroudBeam />
       <WelcomePage />
@@ -73,14 +73,6 @@ const BackgroudBeam = () => {
               Illusion AI
             </span>{" "}
             <br />
-            <motion.span
-              className="text-xl md:text-2xl lg:text-3xl font-light mt-4 block bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-white to-purple-400"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-            >
-              Deeptech that simplifies complexity
-            </motion.span>
           </h1>
 
           <motion.p
@@ -89,10 +81,18 @@ const BackgroudBeam = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-base md:text-lg mt-6 text-white/80 font-normal inter-var text-center max-w-3xl mx-auto leading-relaxed"
           >
-           AI that can read your future, solve your business problems, and teach you the secrets of the
-           universe, help you to research and automate the task all in one place.
+            AI that can read your future, solve your business problems, and teach you the secrets of the
+            universe, help you to research and automate the task all in one place.
           </motion.p>
 
+          <motion.span
+            className="text-xl text-center md:text-2xl lg:text-3xl font-light mt-4 block bg-clip-text "
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
+            Deeptech that simplifies complexity
+          </motion.span>
           <motion.div
             className="flex justify-center gap-4 mt-10"
             initial={{ opacity: 0, y: 20 }}
