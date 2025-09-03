@@ -8,11 +8,11 @@ import Link from "next/link";
 import logo from "@/assets/illusion ai.jpg";
 
 const navItems = [
-  { name: "Home", link: "#home" },
-  { name: "About Us", link: "#about" },
-  { name: "Products", link: "#products" },
-  { name: "Services", link: "#services" },
-  { name: "Contact", link: "#contact" },
+  { name: "Home", link: "/" },
+  { name: "About Us", link: "/#about" },
+  { name: "Products", link: "/#products" },
+  { name: "Services", link: "/#services" },
+  { name: "Contact", link: "/#contact" },
 ];
 
 export default function CustomNavbar() {
@@ -26,8 +26,8 @@ export default function CustomNavbar() {
           <Image
             src={logo}
             alt="Logo"
-            width={40}
-            height={40}
+            width={60}
+            height={60}
             className="rounded"
           />
           <span className="text-white font-bold text-xl">Illusion AI</span>
@@ -48,9 +48,11 @@ export default function CustomNavbar() {
 
         {/* Right: Get Started button (hidden until lg) */}
         <div className="hidden lg:block">
-          <button className="px-5 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-lg hover:opacity-90 transition">
-            Get Started
-          </button>
+          <a href="#contact">
+            <button className="px-5 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-lg hover:opacity-90 transition">
+              Get Started
+            </button>
+          </a>
         </div>
 
         {/* Mobile/Tablet Menu Button (shown below lg) */}
@@ -63,53 +65,55 @@ export default function CustomNavbar() {
       </div>
 
       {/* Mobile/Tablet Nav Slide-in */}
-    
-<AnimatePresence>
-  {isOpen && (
-    <>
-      {/* Overlay */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.8 }}   // stronger dim effect
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-        className="fixed inset-0 bg-black " // higher than navbar
-      />
 
-      {/* Slide-in Menu */}
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: 0 }}
-        exit={{ x: "100%" }}
-        transition={{ type: "tween", duration: 0.3 }}
-        className="fixed top-0 right-0 h-full w-72 bg-[#0a0a0a] shadow-2xl z-[100] p-6 flex flex-col"
-      >
-        <button
-          className="self-end text-white mb-6"
-          onClick={() => setIsOpen(false)}
-        >
-          <X size={28} />
-        </button>
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.8 }}   // stronger dim effect
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black " // higher than navbar
+            />
 
-        <div className="flex flex-col gap-6">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.link}
-              className="text-white/90 hover:text-white text-lg"
-              onClick={() => setIsOpen(false)}
+            {/* Slide-in Menu */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+              className="fixed top-0 right-0 h-full w-72 bg-[#0a0a0a] shadow-2xl z-[100] p-6 flex flex-col"
             >
-              {item.name}
-            </Link>
-          ))}
-          <button className="mt-6 px-5 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-lg hover:opacity-90 transition">
-            Get Started
-          </button>
-        </div>
-      </motion.div>
-    </>
-  )}
-</AnimatePresence>
+              <button
+                className="self-end text-white mb-6"
+                onClick={() => setIsOpen(false)}
+              >
+                <X size={28} />
+              </button>
+
+              <div className="flex flex-col gap-6">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.link}
+                    className="text-white/90 hover:text-white text-lg"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <a href="#contact">
+                  <button className="mt-6 px-5 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-lg hover:opacity-90 transition">
+                    Get Started
+                  </button>
+                </a>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
     </nav>
   );

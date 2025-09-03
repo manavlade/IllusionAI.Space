@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import Footer from "@/components/Footer";
+import CustomNavbar from "@/components/CustomNav";
 
 export default function ConversationalAI() {
   const [mounted, setMounted] = useState(false);
@@ -12,6 +14,8 @@ export default function ConversationalAI() {
   if (!mounted) return null;
 
   return (
+    <div>
+      <CustomNavbar />
     <section className="relative w-full min-h-screen py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white overflow-hidden">
       {/* Background Glow Effects */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -167,5 +171,7 @@ export default function ConversationalAI() {
         ))}
       </div>
     </section>
+    <Footer/>
+    </div>
   );
 }

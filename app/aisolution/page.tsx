@@ -3,6 +3,8 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
+import Footer from "@/components/Footer"
+import CustomNavbar from "@/components/CustomNav"
 
 const solutions = [
   { title: "N8N Automation", desc: "Streamlined workflows & integrations." },
@@ -16,7 +18,9 @@ const solutions = [
 
 export default function AISolution() {
   return (
-    <section className="relative w-full py-20 bg-gradient-to-b from-black via-gray-900 to-black text-white">
+    <div>
+      <CustomNavbar />
+      <section className="relative w-full py-20 bg-gradient-to-b from-black via-gray-900 to-black text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
         
         {/* Left Content */}
@@ -74,5 +78,7 @@ export default function AISolution() {
         </motion.div>
       </div>
     </section>
+    <Footer/>
+    </div>
   )
 }

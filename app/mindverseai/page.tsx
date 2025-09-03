@@ -3,7 +3,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-
+import Footer from "@/components/Footer";
+import CustomNavbar from "@/components/CustomNav";
+  
 const mindversePoints = [
   "Multi-domain chatbot ecosystems – neurology, psychology, philosophy, astrophysics, spirituality, and cosmic intelligence.",
   "Quantum AI – bridging human consciousness and machine computation.",
@@ -12,6 +14,8 @@ const mindversePoints = [
 
 export default function MINDVERSE() {
   return (
+    <div>
+      <CustomNavbar />
     <section className="relative w-full py-20 px-6 lg:px-20 bg-gradient-to-br from-black via-gray-900 to-gray-950 text-white overflow-hidden">
       {/* Background Cosmic Glow Effects */}
       <div className="absolute inset-0 -z-10">
@@ -76,5 +80,7 @@ export default function MINDVERSE() {
         </motion.div>
       </div>
     </section>
+    <Footer/>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   Code,
@@ -12,10 +12,14 @@ import {
   Sparkles,
   CheckCircle2,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Button } from "./ui/button";
 
 const ServicesPage = () => {
   const [expandedService, setExpandedService] = useState<number | null>(null);
   const [hoveredService, setHoveredService] = useState<number | null>(null);
+
+  const router = useRouter();
 
   const toggleExpand = (id: number) => {
     setExpandedService(expandedService === id ? null : id);
@@ -37,6 +41,7 @@ const ServicesPage = () => {
         "Machine Learning & Gen-AI Projects",
       ],
       color: "from-purple-500 to-pink-500",
+      href: "/aisolution"
     },
     {
       id: 2,
@@ -51,6 +56,7 @@ const ServicesPage = () => {
         "Contract-based Web Projects",
       ],
       color: "from-blue-500 to-cyan-500",
+      href: "/websolution"
     },
     {
       id: 3,
@@ -65,6 +71,7 @@ const ServicesPage = () => {
         "Quantum AI Chatbot Ecosystems",
       ],
       color: "from-green-500 to-emerald-500",
+      href: "/mindverseai"
     },
     {
       id: 4,
@@ -79,6 +86,7 @@ const ServicesPage = () => {
         "Customized Consultation Programs",
       ],
       color: "from-orange-500 to-red-500",
+      href: "/aiconsultancy"
     },
     {
       id: 5,
@@ -93,6 +101,7 @@ const ServicesPage = () => {
         "Advanced Conversational Intelligence",
       ],
       color: "from-indigo-500 to-blue-500",
+      href: "/conversationalchatbot"
     },
   ];
 
@@ -160,9 +169,11 @@ const ServicesPage = () => {
       </motion.div>
 
       {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[90%] mx-auto">
+      <div
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[90%] mx-auto">
         {services.map((service, index) => (
           <motion.div
+          onClick={() => router.push(service.href)}
             key={service.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -208,17 +219,26 @@ const ServicesPage = () => {
               ))}
             </ul>
 
+            <div>
+              <Button
+                className={`flex items-center cursor-pointer text-sm font-medium bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}
+                onClick={() => router.push(service.href)}>
+                Learn More
+              </Button>
+            </div>
+
+
             {/* Expand Button */}
-            {service.features.length > 3 && (
+            {/* {service.features.length > 3 && (
               <motion.button
                 onClick={() => toggleExpand(service.id)}
                 className={`flex items-center text-sm font-medium bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}
                 whileHover={{ x: 5 }}
               >
-                {expandedService === service.id ? "Show Less" : "Learn More"}
+                Learn More
                 <ArrowRight className="w-4 h-4 ml-1" />
               </motion.button>
-            )}
+            )} */}
           </motion.div>
         ))}
       </div>
