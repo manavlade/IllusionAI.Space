@@ -10,6 +10,7 @@ import ValuesPage from "./ValuesPage";
 import GoalsPage from "./GoalsPage";
 import WelcomePage from "./WelcomePage";
 import CustomNavbar from "./CustomNav";
+import { BackgroundBeams } from "./ui/background-beams";
 
 export function NavPage() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,10 +35,11 @@ export function NavPage() {
       <motion.div
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-black/80 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
-          }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-black/80 backdrop-blur-md shadow-lg"
+            : "bg-transparent"
+        }`}
       >
         <CustomNavbar />
       </motion.div>
@@ -59,7 +61,7 @@ const AboutUs = () => {
 };
 
 const BackgroudBeam = () => {
-  return (
+  return (<>
     <div className="relative h-full">
       <WavyBackground>
         <motion.div
@@ -81,8 +83,7 @@ const BackgroudBeam = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-base md:text-lg mt-6 text-white/80 inter-var text-center max-w-3xl mx-auto font-bold leading-relaxed"
           >
-            AI that can read your future, solve your business problems, and teach you the secrets of the
-            universe, help you to research and automate the task all in one place.
+            Deeptech that simplifies complexity
           </motion.p>
 
           <motion.span
@@ -91,7 +92,9 @@ const BackgroudBeam = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Deeptech that simplifies complexity
+            AI that can read your future, solve your business problems, and
+            teach you the secrets of the universe, help you to research and
+            automate the task all in one place.
           </motion.span>
           <motion.div
             className="flex justify-center gap-4 mt-10"
@@ -106,18 +109,12 @@ const BackgroudBeam = () => {
             >
               <a href="#services">Explore Services and Products</a>
             </motion.button>
-            {/* <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 bg-white/10 text-white backdrop-blur-sm rounded-lg font-medium border border-white/20"
-            >
-              View Demo
-            </motion.button> */}
+           
           </motion.div>
         </motion.div>
       </WavyBackground>
     </div>
-  );
+  </>);
 };
 
 // Add this to your global CSS
