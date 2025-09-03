@@ -49,16 +49,13 @@ export function NavPage() {
       <ValuesPage />
       <ProductsCarousel />
       <ServicesPage />
-      <AboutUs />
       <ContactPage />
       <Footer />
     </div>
   );
 }
 
-const AboutUs = () => {
-  return <></>;
-};
+
 
 const BackgroudBeam = () => {
   return (<>
@@ -116,6 +113,8 @@ const BackgroudBeam = () => {
     </div>
   </>);
 };
+
+
 
 // Add this to your global CSS
 // Add these to your global CSS or use a style tag
