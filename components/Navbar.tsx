@@ -68,8 +68,8 @@ const BackgroudBeam = () => {
           transition={{ duration: 0.8 }}
           className="max-w-6xl mx-auto px-4"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-7xl text-white font-bold inter-var text-center">
-            <span className="bg-clip-text ">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl text-white font-extrabold inter-var text-center">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-white to-purple-400 ">
               Illusion AI
             </span>{" "}
             <br />
@@ -79,14 +79,14 @@ const BackgroudBeam = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-base md:text-lg mt-6 text-white/80 font-normal inter-var text-center max-w-3xl mx-auto leading-relaxed"
+            className="text-base md:text-lg mt-6 text-white/80 inter-var text-center max-w-3xl mx-auto font-bold leading-relaxed"
           >
             AI that can read your future, solve your business problems, and teach you the secrets of the
             universe, help you to research and automate the task all in one place.
           </motion.p>
 
           <motion.span
-            className="text-xl text-center md:text-2xl lg:text-3xl font-light mt-4 block bg-clip-text "
+            className="text-xl text-center md:text-2xl lg:text-3xl font-light mt-4 block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-white to-white "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}

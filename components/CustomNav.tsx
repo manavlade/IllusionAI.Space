@@ -5,15 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/assets/illusion ai.jpg"
+import logo from "@/assets/illusion ai.jpg";
 
 const navItems = [
-  { name: "Home", link: "#home" },
-  { name: "About Us", link: "#about" },
-  { name: "Products", link: "#products" },
-  { name: "Services", link: "#services" },
-  { name: "Contact", link: "#contact" },
-  // { name: "Pricing", link: "#pricing" },
+  { name: "Home", link: "/" },
+  { name: "About Us", link: "/#about" },
+  { name: "Products", link: "/#products" },
+  { name: "Services", link: "/#services" },
+  { name: "Contact", link: "/#contact" },
 ];
 
 export default function CustomNavbar() {
@@ -27,15 +26,15 @@ export default function CustomNavbar() {
           <Image
             src={logo}
             alt="Logo"
-            width={40}
-            height={40}
+            width={60}
+            height={60}
             className="rounded"
           />
           <span className="text-white font-bold text-xl">Illusion AI</span>
         </div>
 
-        {/* Middle: Navlinks (hidden on mobile) */}
-        <div className="hidden md:flex gap-8">
+        {/* Middle: Navlinks (hidden on mobile + tab, shown only on lg and above) */}
+        <div className="hidden lg:flex gap-8">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -47,8 +46,8 @@ export default function CustomNavbar() {
           ))}
         </div>
 
-        {/* Right: Get Started button */}
-        <div className="hidden md:block">
+        {/* Right: Get Started button (hidden until lg) */}
+        <div className="hidden lg:block">
           <a href="#contact">
             <button className="px-5 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-lg hover:opacity-90 transition">
               Get Started
@@ -56,35 +55,36 @@ export default function CustomNavbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile/Tablet Menu Button (shown below lg) */}
         <button
-          className="md:hidden text-white"
+          className="lg:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Nav Slide-in */}
+      {/* Mobile/Tablet Nav Slide-in */}
+
       <AnimatePresence>
         {isOpen && (
           <>
             {/* Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
+              animate={{ opacity: 0.8 }}   // stronger dim effect
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black z-40"
+              className="fixed inset-0 bg-black " // higher than navbar
             />
 
-            {/* Mobile Nav Slide-in */}
+            {/* Slide-in Menu */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 right-0 h-full w-64 bg-black/95 backdrop-blur-lg shadow-lg z-50 p-6 flex flex-col"
+              className="fixed top-0 right-0 h-full w-72 bg-[#0a0a0a] shadow-2xl z-[100] p-6 flex flex-col"
             >
               <button
                 className="self-end text-white mb-6"
@@ -92,6 +92,7 @@ export default function CustomNavbar() {
               >
                 <X size={28} />
               </button>
+
               <div className="flex flex-col gap-6">
                 {navItems.map((item) => (
                   <Link
@@ -103,9 +104,11 @@ export default function CustomNavbar() {
                     {item.name}
                   </Link>
                 ))}
-                <button className="mt-6 px-5 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-lg hover:opacity-90 transition">
-                  Get Started
-                </button>
+                <a href="#contact">
+                  <button className="mt-6 px-5 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-lg hover:opacity-90 transition">
+                    Get Started
+                  </button>
+                </a>
               </div>
             </motion.div>
           </>

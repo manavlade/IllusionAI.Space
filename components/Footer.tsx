@@ -94,11 +94,11 @@ export default function Footer() {
           {/* Quick links */}
           <div className="flex flex-col gap-2">
             <h4 className="font-semibold mb-2">Quick links</h4>
-            <a href="#home" className="hover:text-neutral-300">Home</a>
-            <a href="#about" className="hover:text-neutral-300">About Us</a>
-            <a href="#services" className="hover:text-neutral-300">Services</a>
-            <a href="#products" className="hover:text-neutral-300">Products</a>
-            <a href="#contact" className="hover:text-neutral-300">Contact us</a>
+            <a href="/" className="hover:text-neutral-300">Home</a>
+            <a href="/#about" className="hover:text-neutral-300">About Us</a>
+            <a href="/#services" className="hover:text-neutral-300">Services</a>
+            <a href="/#products" className="hover:text-neutral-300">Products</a>
+            <a href="/#contact" className="hover:text-neutral-300">Contact us</a>
           </div>
           {/* Legal */}
           <div className="flex flex-col gap-2">
