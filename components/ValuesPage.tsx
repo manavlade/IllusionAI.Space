@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Lightbulb, Users, ShieldCheck, Award } from "lucide-react";
+import { BackgroundBeams } from "./ui/background-beams";
 
 const values = [
   {
@@ -37,7 +38,7 @@ const values = [
 export default function ValuesPage() {
   return (
     <main className="relative bg-black text-white overflow-hidden py-24 md:py-32">
-      {/* Background Glow */}
+           <BackgroundBeams className="absolute inset-0 z-0" />
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-black to-purple-900/20 pointer-events-none" />
       <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] bg-green-600/20 rounded-full blur-[200px] animate-pulse" />
       <div className="absolute -bottom-40 -right-40 w-[40rem] h-[40rem] bg-purple-600/20 rounded-full blur-[200px] animate-pulse delay-1000" />

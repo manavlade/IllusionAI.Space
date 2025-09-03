@@ -3,6 +3,7 @@
 import {motion} from 'framer-motion';
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { BackgroundBeams } from './ui/background-beams';
 export default function Footer() {
 
   const router = useRouter();
@@ -39,7 +40,7 @@ export default function Footer() {
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium shadow-lg"
             >
-              <a href="#contact">Get Started</a>
+              <a href="/#contact">Get Started</a>
             </motion.button>
           </motion.div>
         </motion.div>

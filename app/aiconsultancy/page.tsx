@@ -215,13 +215,14 @@ export default function AIConsultancy() {
                 viewport={{ once: true }}
                 className="mt-10"
               >
-                <motion.button
+                <motion.a
+                href="/#contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-full md:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium py-3 px-8 rounded-xl shadow-lg shadow-blue-900/30 transition-all duration-300"
                 >
                   Schedule a Consultation
-                </motion.button>
+                </motion.a>
               </motion.div>
             </motion.div>
           </div>

@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { BackgroundBeams } from "./ui/background-beams";
 
 export default function WelcomePage() {
   return (
     <main id="about" className="relative bg-black text-white overflow-hidden">
-      {/* Background Gradient */}
+      {/* Background Gradient */}     <BackgroundBeams className="absolute inset-0 z-0" />
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-black to-purple-900/20 pointer-events-none" />
 
       {/* Floating Glow Blobs */}

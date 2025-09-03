@@ -219,26 +219,16 @@ const ServicesPage = () => {
               ))}
             </ul>
 
-            <div>
-              <Button
-                className={`flex items-center cursor-pointer text-sm font-medium bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}
-                onClick={() => router.push(service.href)}>
-                Learn More
-              </Button>
-            </div>
+           <div>
+  <Button
+    className={`flex items-center cursor-pointer text-sm font-medium bg-gradient-to-r ${service.color} bg-clip-text text-transparent hover:scale-105 transition-transform`}
+    onClick={() => router.push(service.href)}
+  >
+    Learn More
+  </Button>
+</div>
 
-
-            {/* Expand Button */}
-            {/* {service.features.length > 3 && (
-              <motion.button
-                onClick={() => toggleExpand(service.id)}
-                className={`flex items-center text-sm font-medium bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}
-                whileHover={{ x: 5 }}
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </motion.button>
-            )} */}
+           
           </motion.div>
         ))}
       </div>
@@ -254,13 +244,14 @@ const ServicesPage = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
           Ready to transform your business?
         </h2>
-        <motion.button
+        <motion.a
+        href="#contact"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium shadow-lg hover:shadow-purple-500/20 transition-all"
         >
           Get Started Today
-        </motion.button>
+        </motion.a>
       </motion.div>
     </div>
   );
