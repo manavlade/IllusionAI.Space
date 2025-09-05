@@ -1,7 +1,7 @@
 "use client";
 
 import {motion} from 'framer-motion';
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { BackgroundBeams } from './ui/background-beams';
 export default function Footer() {
@@ -83,14 +83,27 @@ export default function Footer() {
       <footer className="bg-black text-white mt-0 py-14 px-6">
         <div className="max-w-[90%] mx-auto grid grid-cols-2 md:grid-cols-3 gap-10 text-sm">
           {/* Company info */}
-          <div className="flex flex-col gap-3">
-            <h3 className="text-lg font-bold">Illusion AI</h3>
-       
-            <p>Mumbai, Maharashtra</p>
-            <p>India</p>
-            <p className="mt-2">Phone number: <span className="font-medium">9766675853</span></p>
-            <p>Email: <span className="font-medium">infoillusionai@gmail.com</span></p>
-          </div>
+         <div className="flex flex-col gap-4 p-6 rounded-xl shadow-lg  w-fit text-gray-200">
+  <h3 className="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+    Illusion AI
+  </h3>
+
+  <div className="flex items-center gap-3 text-gray-300 hover:text-red-400 transition-colors">
+    <MapPin className="w-5 h-5 text-red-400" />
+    <span>Mumbai, Maharashtra, India</span>
+  </div>
+
+  <div className="flex items-center gap-3 text-gray-300 hover:text-green-400 transition-colors">
+    <Phone className="w-5 h-5 text-green-400" />
+    <span className="font-medium">+91 97666 75853</span>
+  </div>
+
+  <div className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors">
+    <Mail className="w-5 h-5 text-blue-400" />
+    <span className="font-medium">infoillusionai@gmail.com</span>
+  </div>
+</div>
+
 
           {/* Quick links */}
           <div className="flex flex-col gap-2">
