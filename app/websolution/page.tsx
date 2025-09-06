@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import Footer from "@/components/Footer";
@@ -17,7 +17,7 @@ interface Project {
   title: string;
   description: string;
   link: string;
-  image: string;
+  image: string | StaticImageData;
   date: string;
 }
 const projects: Project[] = [
@@ -82,7 +82,6 @@ const projects: Project[] = [
     image: "/footique.png",
     date: "Feb 2023",
   },
-  ,
   {
     title: "WeatherWear",
     description:
